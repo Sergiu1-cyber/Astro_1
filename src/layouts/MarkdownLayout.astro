@@ -1,5 +1,5 @@
 ---
-  const {title} = Astro.props
+  const {frontmatter} = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -8,10 +8,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{title}</title>
+  <title>{frontmatter.title}</title>
 </head>
 
 <body>
+  <h1>{frontmatter.info}</h1>
   <slot />
 </body>
 
