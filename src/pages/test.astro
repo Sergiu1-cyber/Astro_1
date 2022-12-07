@@ -1,8 +1,18 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+const posts = await Astro.glob('./blog/*.{md,mdx}');
 ---
 
 <DefaultLayout title="test page">
   <h1 class="text-red-500">Test Astro</h1>
   <img src="/images/r.jpg" alt="img" class="w-40 h-40">
+
+{
+	posts.map((post) => (
+	  <li>
+	    <a href={post.url}>{post.frontmatter.title}</a>
+	  </li>
+	))
+}
+
 </DefaultLayout>
